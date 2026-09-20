@@ -1,0 +1,68 @@
+.health-strip {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.health-item {
+  flex: 1;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.health-label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.health-value-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.health-value {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.health-sub {
+  color: var(--text-secondary);
+  font-size: 12px;
+  margin-top: auto;
+}
+
+.status-indicator {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+}
+
+.status-normal {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--status-normal);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.status-warning {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--status-warning);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.status-critical {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--status-critical);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
