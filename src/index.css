@@ -1,77 +1,170 @@
-/* ── Design Tokens ── */
+/* ═══════════════════════════════════════════════════════════════
+   AeroTwin Command Dashboard – Design Tokens
+   Premium Glassmorphic Pastel System
+   ═══════════════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 :root {
-  /* Sidebar (colored) */
-  --sidebar-bg: #1e293b;
-  --sidebar-text: #cbd5e1;
-  --sidebar-text-active: #ffffff;
-  --sidebar-active-bg: #334155;
-  --sidebar-hover-bg: #27364a;
-  --sidebar-border: #334155;
-  --sidebar-accent: #38bdf8;
+  /* ── Base surfaces ── */
+  --bg-page:            #F4F7FB;   /* Soft page background */
+  --bg-base:            rgba(255, 255, 255, 0.7); /* Glass base */
+  --bg-surface:         rgba(255, 255, 255, 0.9); /* Solid-ish surface */
+  --bg-surface-hover:   rgba(255, 255, 255, 1);
+  --glass-border:       rgba(255, 255, 255, 0.5);
 
-  /* Main background – pure white */
-  --bg-base: #ffffff;
-  --bg-surface: #f8fafc;
-  --bg-surface-hover: #f1f5f9;
+  /* ── Text ── */
+  --text-primary:       #1E293B;   /* Deep slate for contrast */
+  --text-secondary:     #64748B;   /* Muted slate */
 
-  /* Borders */
-  --border: #e2e8f0;
-  --border-light: #cbd5e1;
+  /* ── Borders & shadows ── */
+  --border:             rgba(203, 213, 225, 0.4);
+  --border-light:       rgba(226, 232, 240, 0.5);
+  --shadow-sm:          0 2px 4px rgba(15, 23, 42, 0.04);
+  --shadow:             0 8px 16px rgba(15, 23, 42, 0.04), 0 2px 6px rgba(15, 23, 42, 0.02);
+  --shadow-lg:          0 12px 24px rgba(15, 23, 42, 0.06), 0 4px 12px rgba(15, 23, 42, 0.03);
 
-  /* Text – charcoal, no glow */
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
+  /* ── Sidebar & top header ── */
+  --sidebar-bg:         rgba(255, 255, 255, 0.85); /* Light glass header */
+  --sidebar-border:     rgba(203, 213, 225, 0.4);
+  --sidebar-text:       #64748B;
+  --sidebar-text-active:#0F172A;
+  --sidebar-hover-bg:   rgba(241, 245, 249, 0.8);
+  --sidebar-active-bg:  rgba(226, 232, 240, 0.8);
+  --sidebar-accent:     #3B82F6;
 
-  /* Interactive / accent (used only in main content sparingly) */
-  --accent: #0ea5e9;
-  --accent-bg: #e0f2fe;
-  --accent-transparent: rgba(14, 165, 233, 0.1);
+  /* ── Interactive / accent ── */
+  --accent:             #3B82F6;
+  --accent-bg:          #EFF6FF;
+  --accent-transparent: rgba(59, 130, 246, 0.1);
 
-  /* Status colours */
-  --status-normal: #16a34a;
-  --status-warning: #d97706;
-  --status-critical: #dc2626;
+  /* ════════════════════════════════════════════
+     FUNCTIONAL PASTEL COLOR TOKENS
+     ════════════════════════════════════════════ */
 
-  /* Shadows – soft, no glow */
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  /* Health / normal / stable → Mint */
+  --mint-bg:      rgba(216, 238, 228, 0.7);
+  --mint-border:  rgba(178, 216, 200, 0.8);
+  --mint-text:    #0F766E;
 
+  /* Anomaly / warning / attention → Soft Yellow */
+  --yellow-bg:    rgba(254, 243, 199, 0.7);
+  --yellow-border:rgba(253, 230, 138, 0.8);
+  --yellow-text:  #B45309;
+
+  /* Digital twin / sync / architecture → Sky Blue */
+  --blue-bg:      rgba(224, 242, 254, 0.7);
+  --blue-border:  rgba(186, 230, 253, 0.8);
+  --blue-text:    #0369A1;
+
+  /* RUL / prediction / analytics → Lavender */
+  --lavender-bg:  rgba(237, 233, 254, 0.7);
+  --lavender-border:rgba(221, 214, 254, 0.8);
+  --lavender-text:#6D28D9;
+
+  /* Mission / flight context → Blush Pink */
+  --pink-bg:      rgba(252, 231, 243, 0.7);
+  --pink-border:  rgba(251, 207, 232, 0.8);
+  --pink-text:    #BE185D;
+
+  /* Maintenance / action required → Pastel Peach */
+  --peach-bg:     rgba(255, 237, 213, 0.7);
+  --peach-border: rgba(253, 216, 168, 0.8);
+  --peach-text:   #C2410C;
+
+  /* Telemetry / live sensor values → Pastel Aqua */
+  --aqua-bg:      rgba(207, 250, 254, 0.7);
+  --aqua-border:  rgba(165, 243, 252, 0.8);
+  --aqua-text:    #0E7490;
+
+  /* Simulation / what-if analysis → Periwinkle */
+  --periwinkle-bg:    rgba(224, 231, 255, 0.7);
+  --periwinkle-border:rgba(199, 210, 254, 0.8);
+  --periwinkle-text:  #4338CA;
+
+  /* Event history / archived → Gray-Lilac */
+  --lilac-bg:     rgba(241, 245, 249, 0.7);
+  --lilac-border: rgba(226, 232, 240, 0.8);
+  --lilac-text:   #475569;
+
+  /* Critical alert only → Pale Rose */
+  --rose-bg:      rgba(254, 226, 226, 0.7);
+  --rose-border:  rgba(254, 202, 202, 0.8);
+  --rose-text:    #B91C1C;
+
+  /* ── Status semantic aliases ── */
+  --status-normal:   #10B981;
+  --status-warning:  #F59E0B;
+  --status-critical: #EF4444;
+
+  /* ── Legacy aliases kept for component compatibility ── */
+  --bg-pastel-blue:   var(--blue-bg);
+  --bg-pastel-green:  var(--mint-bg);
+  --bg-pastel-yellow: var(--yellow-bg);
+  --bg-pastel-purple: var(--lavender-bg);
+  --bg-pastel-pink:   var(--pink-bg);
+  --bg-pastel-gray:   var(--lilac-bg);
+
+  /* ── Typography ── */
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Outfit', var(--font-sans);
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', ui-monospace, monospace;
 }
 
-/* ── Reset ── */
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box; 
+  overflow-wrap: anywhere;
+}
 
 html, body {
   margin: 0;
   padding: 0;
-  background: var(--bg-base);
+  background-color: var(--bg-page);
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(224, 242, 254, 0.8) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(252, 231, 243, 0.6) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(237, 233, 254, 0.8) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(216, 238, 228, 0.6) 0px, transparent 50%);
+  background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-sans);
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  /* NO text-shadow, NO glow */
-  text-shadow: none;
 }
 
-h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 600; text-shadow: none; }
+h1, h2, h3, h4, h5, h6 { 
+  margin: 0; 
+  font-family: var(--font-display);
+  font-weight: 600; 
+  letter-spacing: -0.02em;
+}
+
 p { margin: 0; }
 
-a { color: var(--accent); text-decoration: none; }
-button { font-family: inherit; text-shadow: none; }
+a { 
+  color: var(--accent); 
+  text-decoration: none; 
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: #2563EB;
+}
+
+button { 
+  font-family: inherit; 
+}
 
 .tabular-nums {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
 }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-surface); }
-::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(148, 163, 184, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.6); }
 
 /* ── App layout ── */
 #root {
@@ -81,7 +174,35 @@ button { font-family: inherit; text-shadow: none; }
   overflow: hidden;
 }
 
-/* ── Focus ring – visible, no glow ── */
+/* ── Global UI Enhancements ── */
+.panel, .card {
+  background: var(--bg-base);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow);
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover, .card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ── Focus ring ── */
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
@@ -91,3 +212,4 @@ button { font-family: inherit; text-shadow: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+

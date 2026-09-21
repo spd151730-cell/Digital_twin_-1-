@@ -1,11 +1,13 @@
-/* ── System status panel ── */
+/* ── System status panel: white with functional status dots ── */
 .status-panel {
   flex: 1;
+  background-color: var(--bg-base);
+  border-color: var(--border);
 }
 
 .panel-title {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 14px;
   padding-bottom: 8px;
@@ -34,11 +36,16 @@
   gap: 5px;
 }
 
-.status-value {
-  color: var(--text-primary);
-  text-transform: capitalize;
-}
+.status-value { color: var(--text-primary); text-transform: capitalize; }
 
-.status-icon.good  { color: var(--status-normal); }
-.status-icon.warn  { color: var(--status-warning); }
-.status-icon.bad   { color: var(--status-critical); }
+/* Functional status dot colors */
+.status-icon.good  { color: var(--mint-text); }
+.status-icon.warn  { color: var(--yellow-text); }
+.status-icon.bad   { color: var(--rose-text); }
+
+/* Status service mini-badges */
+.status-service-telemetry { color: var(--aqua-text); }
+.status-service-twin      { color: var(--blue-text); }
+.status-service-ml        { color: var(--lavender-text); }
+.status-service-diag      { color: var(--peach-text); }
+.status-service-ws        { color: var(--lilac-text); }

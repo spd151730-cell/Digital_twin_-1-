@@ -1,73 +1,104 @@
-/* ── Health summary strip ── */
+/* ── Health summary strip – 5 distinct pastel glass cards ── */
 .health-strip {
   display: flex;
-  gap: 12px;
-  margin-bottom: 14px;
+  gap: 16px;
+  margin-bottom: 24px;
 }
 
+/* Each card gets its own functional color */
 .health-item {
   flex: 1;
-  background-color: var(--bg-base);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 14px;
+  border-radius: 16px;
+  padding: 16px 20px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   box-shadow: var(--shadow-sm);
+  border: 1px solid;
+  min-width: 0;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.health-item:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+/* Card 1: Engine Health → Mint */
+.health-item--health {
+  background-color: var(--mint-bg);
+  border-color: var(--mint-border);
+}
+
+/* Card 2: Anomaly Score → Soft Yellow */
+.health-item--anomaly {
+  background-color: var(--yellow-bg);
+  border-color: var(--yellow-border);
+}
+
+/* Card 3: Digital-Twin Sync → Sky Blue */
+.health-item--twin {
+  background-color: var(--blue-bg);
+  border-color: var(--blue-border);
+}
+
+/* Card 4: RUL Estimate → Lavender */
+.health-item--rul {
+  background-color: var(--lavender-bg);
+  border-color: var(--lavender-border);
+}
+
+/* Card 5: Flight Phase / Mission → Blush Pink */
+.health-item--mission {
+  background-color: var(--pink-bg);
+  border-color: var(--pink-border);
 }
 
 .health-label {
   color: var(--text-secondary);
-  font-size: 11px;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-weight: 700;
 }
 
 .health-value-row {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  gap: 8px;
 }
 
 .health-value {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-family: var(--font-display);
+  font-weight: 700;
   color: var(--text-primary);
   text-shadow: none;
+  letter-spacing: -0.02em;
 }
 
 .health-sub {
   color: var(--text-secondary);
-  font-size: 11px;
+  font-size: 0.75rem;
   margin-top: 2px;
+  font-weight: 500;
 }
 
-/* Status badges */
+/* Status badges – tinted within each card family */
 .status-indicator {
-  font-size: 10px;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 10px;
-  letter-spacing: 0.3px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
   text-shadow: none;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.status-normal {
-  background-color: #dcfce7;
-  color: #15803d;
-  border: 1px solid #bbf7d0;
-}
-
-.status-warning {
-  background-color: #fef3c7;
-  color: #b45309;
-  border: 1px solid #fde68a;
-}
-
-.status-critical {
-  background-color: #fee2e2;
-  color: #b91c1c;
-  border: 1px solid #fecaca;
-}
+.status-normal   { background-color: var(--mint-bg);     color: var(--mint-text);     border: 1px solid var(--mint-border); }
+.status-warning  { background-color: var(--yellow-bg);   color: var(--yellow-text);   border: 1px solid var(--yellow-border); }
+.status-critical { background-color: var(--rose-bg);     color: var(--rose-text);     border: 1px solid var(--rose-border); }

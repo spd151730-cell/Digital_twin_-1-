@@ -109,8 +109,12 @@ export function computeDerivedOutputs(telemetry: TelemetryData): DerivedDemoOutp
       hypothesis: primaryHypothesis,
       confidence,
       evidence: evidences,
+      affectedTelemetry: evidences.map(e => e.split(' ')[0]),
       detectionTime: new Date().toISOString(),
-      recommendedAction: action
+      recommendedAction: action,
+      priority: highestSeverity === 'critical' ? 'Immediate' : 'P2',
+      timing: highestSeverity === 'critical' ? 'Immediately' : 'within 12 flight hours',
+      reason: `Demo model output: ${primaryHypothesis}. Confidence ${confidence}%.`
     };
   }
 

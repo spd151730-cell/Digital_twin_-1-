@@ -39,10 +39,17 @@ export function TelemetryGroups() {
     }
   ];
 
+  const groupModifiers: Record<string, string> = {
+    'Performance': 'telemetry-card--performance',
+    'Thermal':     'telemetry-card--thermal',
+    'Lubrication': 'telemetry-card--lubrication',
+    'Systems':     'telemetry-card--systems',
+  };
+
   return (
     <div className="telemetry-groups">
       {groups.map((group, idx) => (
-        <div key={idx} className="panel telemetry-card">
+        <div key={idx} className={`panel telemetry-card ${groupModifiers[group.title] ?? ''}`}>
           <div className="telemetry-header">
             <span>{group.title}</span>
             <span className="badge" style={{ fontSize: '9px', fontWeight: 'normal', color: 'var(--text-secondary)' }}>DEMO DATA</span>

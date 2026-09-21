@@ -18,8 +18,8 @@ export function TwinVisualization() {
       <div className="schematic-container">
         {/* Placeholder for actual 3D/SVG schematic */}
         <div className="placeholder-overlay">
-          <div className="placeholder-badge">3D VIEWPORT PLACEHOLDER</div>
-          <div className="placeholder-desc">Replace with engine renderer / SVG twin when model feed is available</div>
+          <span className="placeholder-badge">3D VIEWPORT PLACEHOLDER</span>
+          <span className="placeholder-desc">Simplified schematic shown. Digital twin WebGL renderer will be connected here.</span>
           <button className="btn btn-secondary btn-sm mt-4" onClick={() => showToast('3D renderer placeholder: connect the digital-twin model here.')}>Open 3D View</button>
         </div>
         <div className="engine-schematic blurred">

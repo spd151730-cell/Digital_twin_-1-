@@ -1,0 +1,107 @@
+/* ── Maintenance Advisory: pastel yellow + peach ── */
+.advisory-panel {
+  background-color: var(--yellow-bg);
+  border-color: var(--yellow-border) !important;
+  gap: 12px;
+}
+
+.advisory-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--yellow-border);
+  padding-bottom: 8px;
+}
+
+.advisory-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  text-shadow: none;
+}
+
+/* Priority badges */
+.badge-priority-p1 {
+  background-color: var(--rose-bg);
+  color: var(--rose-text);
+  border: 1px solid var(--rose-border);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.badge-priority-p2 {
+  background-color: var(--peach-bg);
+  color: var(--peach-text);
+  border: 1px solid var(--peach-border);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.badge-priority {
+  background-color: var(--yellow-bg);
+  color: var(--yellow-text);
+  border: 1px solid var(--yellow-border);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.advisory-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.advisory-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.advisory-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.advisory-value {
+  font-size: 12px;
+  color: var(--text-primary);
+}
+
+/* Recommended action area → Peach */
+.advisory-action-block {
+  background-color: var(--peach-bg);
+  border: 1px solid var(--peach-border);
+  border-radius: 5px;
+  padding: 8px 10px;
+}
+
+.action-value {
+  font-weight: 700;
+  color: var(--peach-text);
+}
+
+.timing-value {
+  color: var(--blue-text);
+  font-weight: 600;
+}
+
+.advisory-list {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.advisory-actions {
+  margin-top: 4px;
+  display: flex;
+  justify-content: flex-end;
+}

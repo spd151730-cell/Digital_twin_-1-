@@ -2,27 +2,38 @@
 .panel {
   background-color: var(--bg-base);
   border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 14px 16px;
+  border-radius: 7px;
+  padding: 18px 20px;
   display: flex;
   flex-direction: column;
-  /* soft elevation, NOT a glow */
   box-shadow: var(--shadow-sm);
+  width: 100%;
+  max-width: none;
+  min-width: 0;
 }
 
-/* Alert panel variants */
+@media (max-width: 768px) {
+  .panel {
+    padding: 14px 16px;
+  }
+}
+
+/* ── Alert panel: yellow for warning, rose for critical ── */
 .alert-panel {
   border-left-width: 4px;
+  border-left-style: solid;
 }
 
 .alert-panel.warning {
-  border-left-color: var(--status-warning);
-  background-color: #fffbeb;
+  border-left-color: var(--yellow-text);
+  background-color: var(--yellow-bg);
+  border-color: var(--yellow-border);
 }
 
 .alert-panel.critical {
-  border-left-color: var(--status-critical);
-  background-color: #fff5f5;
+  border-left-color: var(--rose-text);
+  background-color: var(--rose-bg);
+  border-color: var(--rose-border);
 }
 
 .alert-panel.empty-alert {
@@ -33,11 +44,12 @@
   text-align: center;
   padding: 28px 16px;
   color: var(--text-secondary);
-  background-color: var(--bg-surface);
+  background-color: var(--mint-bg);
+  border-color: var(--mint-border);
 }
 
 .icon-empty { margin-bottom: 8px; opacity: 0.4; }
-.empty-title { color: var(--text-primary); font-weight: 500; }
+.empty-title { color: var(--mint-text); font-weight: 600; }
 
 /* Alert header */
 .alert-header {
@@ -60,8 +72,8 @@
   text-shadow: none;
 }
 
-.warning .alert-icon { color: var(--status-warning); }
-.critical .alert-icon { color: var(--status-critical); }
+.warning .alert-icon  { color: var(--yellow-text); }
+.critical .alert-icon { color: var(--rose-text); }
 
 .alert-time {
   font-size: 11px;
@@ -72,7 +84,7 @@
 .alert-confidence {
   display: flex;
   justify-content: space-between;
-  background-color: var(--bg-surface);
+  background-color: rgba(255,255,255,0.6);
   padding: 7px 10px;
   border-radius: 4px;
   margin-bottom: 14px;
@@ -90,7 +102,7 @@
   text-transform: uppercase;
   color: var(--text-secondary);
   letter-spacing: 0.5px;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 6px;
 }
 
@@ -103,18 +115,18 @@
 
 .evidence-list li { margin-bottom: 3px; }
 
-/* Action section */
+/* Action section → Peach for recommended action */
 .action-section {
-  background-color: #f0f9ff;
-  border: 1px solid #bae6fd;
+  background-color: var(--peach-bg);
+  border: 1px solid var(--peach-border);
   padding: 10px 12px;
-  border-radius: 4px;
+  border-radius: 5px;
   margin-bottom: 16px;
 }
 
 .action-text {
-  color: #0369a1;
-  font-weight: 500;
+  color: var(--peach-text);
+  font-weight: 600;
   font-size: 13px;
   text-shadow: none;
 }
@@ -143,7 +155,7 @@
   border: 1px solid var(--border);
 }
 
-.btn-secondary:hover { background-color: var(--bg-surface-hover); }
+.btn-secondary:hover { background-color: var(--bg-surface); }
 
 .btn-primary {
   background-color: var(--accent);
@@ -151,4 +163,4 @@
   border: 1px solid var(--accent);
 }
 
-.btn-primary:hover { background-color: #0284c7; }
+.btn-primary:hover { background-color: #2D5F82; }

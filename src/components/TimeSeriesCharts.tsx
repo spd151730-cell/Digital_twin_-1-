@@ -47,18 +47,19 @@ export function TimeSeriesCharts() {
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
           <h3 className="panel-title" style={{ border: 'none', margin: 0, padding: 0 }}>Telemetry Trends (Last 60m)</h3>
           <span className="badge" style={{ border: '1px dashed var(--text-secondary)', color: 'var(--text-secondary)' }}>LIVE SERIES TODO</span>
+          <span className="badge demo-badge">DEMO DATA</span>
         </div>
         <div className="chart-controls">
-          <button className={`control-btn ${timeRange === '1h' ? 'active' : ''}`} onClick={() => setTimeRange('1h')}>1 H</button>
-          <button className={`control-btn ${timeRange === '6h' ? 'active' : ''}`} onClick={() => setTimeRange('6h')}>6 H</button>
+          <button className={`control-btn ${timeRange === '1h' ? 'active' : ''}`} onClick={() => setTimeRange('1h')}>1H</button>
+          <button className={`control-btn ${timeRange === '6h' ? 'active' : ''}`} onClick={() => setTimeRange('6h')}>6H</button>
           <button className={`control-btn ${timeRange === 'mission' ? 'active' : ''}`} onClick={() => setTimeRange('mission')}>MISSION</button>
         </div>
       </div>
 
       <div className="charts-grid">
         {/* Thermal Chart (CHT/EGT) */}
-        <div className="chart-box">
-          <div className="chart-title">Thermal (°C)</div>
+        <div className="chart-box relative-container">
+          <h4 className="chart-title">Exhaust Gas Temp (°C) - Live Series TODO</h4>
           <div className="chart-wrapper">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={data} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>
@@ -99,8 +100,8 @@ export function TimeSeriesCharts() {
         </div>
 
         {/* Anomaly Score Chart */}
-        <div className="chart-box">
-          <div className="chart-title">Anomaly Score</div>
+        <div className="chart-box relative-container">
+          <h4 className="chart-title">Health Index Trend (Demo Baseline)</h4>
           <div className="chart-wrapper">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={data} margin={{ top: 5, right: 5, left: -20, bottom: 0 }}>

@@ -1,41 +1,353 @@
-/* ── Secondary view placeholders ── */
-.view-placeholder {
+/* ── Secondary Views Styles – Functional Pastel Colors ── */
+.secondary-view-container {
+  padding: 20px;
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background-color: var(--bg-page);
+}
+
+.view-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.view-header h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.placeholder-box {
+  background-color: var(--lilac-bg);
+  border: 1px dashed var(--lilac-border);
+  border-radius: 7px;
+  padding: 20px;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100%;
+}
+
+.placeholder-box.large {
+  height: 300px;
+}
+
+.mt-4 { margin-top: 16px; }
+
+/* ═══ Diagnosis View → Peach panel ═══ */
+.diagnosis-panel {
+  background-color: var(--peach-bg);
+  border-color: var(--peach-border) !important;
+}
+
+.diag-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+.diag-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.diag-value {
+  font-size: 14px;
+  color: var(--text-primary);
+}
+
+.highlight-warning {
+  color: var(--yellow-text);
+  font-weight: 700;
+}
+
+.diag-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+}
+
+.diag-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  color: var(--text-primary);
+}
+
+/* Evidence area → yellow */
+.diag-evidence {
+  background-color: var(--yellow-bg);
+  border: 1px solid var(--yellow-border);
+  border-radius: 5px;
+  padding: 10px 12px;
+}
+
+/* Normal/no-fault → mint */
+.diag-normal {
+  background-color: var(--mint-bg);
+  border: 1px solid var(--mint-border);
+  border-radius: 5px;
+  padding: 10px 12px;
+  color: var(--mint-text);
+  font-weight: 600;
+}
+
+.disclaimer-alert {
+  background: var(--yellow-bg);
+  border: 1px solid var(--yellow-border);
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: var(--yellow-text);
+}
+
+/* ═══ Trends & RUL → Lavender ═══ */
+.rul-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.rul-main {
+  background-color: var(--lavender-bg);
+  border-color: var(--lavender-border) !important;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding: 32px;
 }
 
-.placeholder-content {
+.rul-value {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.rul-value span {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.rul-sub {
+  font-size: 13px;
+  color: var(--lavender-text);
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.rul-stats {
   background-color: var(--bg-base);
-  border: 1px dashed var(--border-light);
-  border-radius: 8px;
-  padding: 40px;
-  text-align: center;
-  max-width: 560px;
+  border-color: var(--border) !important;
+}
+
+.rul-stat-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.rul-stat-row:last-child { border-bottom: none; }
+
+.trend-down { color: var(--yellow-text); font-weight: 700; }
+.trend-up   { color: var(--rose-text);   font-weight: 700; }
+
+.xai-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ═══ Replay View ═══ */
+.replay-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+.replay-main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.replay-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+}
+
+.scrubber { flex: 1; }
+
+.time-display {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-primary);
+}
+
+.event-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.time {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.event-desc.severity-critical { color: var(--rose-text);   font-weight: 700; }
+.event-desc.severity-warning  { color: var(--yellow-text); font-weight: 700; }
+
+/* ═══ Simulation View → Periwinkle ═══ */
+.sim-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 16px;
+}
+
+.scenario-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sim-btn {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+  color: var(--text-primary);
+}
+
+.sim-btn:hover {
+  border-color: var(--periwinkle-border);
+  background-color: var(--periwinkle-bg);
+}
+
+.sim-btn.active {
+  background: var(--periwinkle-bg);
+  border-color: var(--periwinkle-border);
+  color: var(--periwinkle-text);
+  font-weight: 700;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.result-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 16px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
   box-shadow: var(--shadow-sm);
 }
 
-.placeholder-content h2 {
-  color: var(--text-primary);
-  margin-bottom: 12px;
-  font-size: 20px;
-  text-shadow: none;
-}
+/* Simulation result tiles: contextual colors */
+.result-item--health     { border-left: 3px solid var(--mint-border); }
+.result-item--risk       { border-left: 3px solid var(--yellow-border); }
+.result-item--efficiency { border-left: 3px solid var(--aqua-border); }
+.result-item--rul        { border-left: 3px solid var(--lavender-border); }
 
-.placeholder-content p {
+.res-label {
+  font-size: 11px;
+  text-transform: uppercase;
   color: var(--text-secondary);
-  margin-bottom: 20px;
-  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 
-.placeholder-alert {
-  background-color: #f0f9ff;
-  color: #0369a1;
-  padding: 10px 14px;
-  border-radius: 5px;
-  border: 1px solid #bae6fd;
+.res-val {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ═══ History View → White table with colored markers ═══ */
+.table-panel {
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--bg-base);
+}
+
+.table-responsive { overflow-x: auto; }
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
   font-size: 13px;
-  text-shadow: none;
+}
+
+.history-table th {
+  background: var(--lilac-bg);
+  padding: 12px 16px;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+}
+
+.history-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+/* Colored event marker dots */
+.event-marker-normal   { color: var(--mint-text); }
+.event-marker-advisory { color: var(--yellow-text); }
+.event-marker-maint    { color: var(--peach-text); }
+.event-marker-critical { color: var(--rose-text); }
+.event-marker-info     { color: var(--lilac-text); }
+
+.badge.severity-warning  {
+  background: var(--yellow-bg);
+  color: var(--yellow-text);
+  border: 1px solid var(--yellow-border);
+}
+
+.badge.severity-critical {
+  background: var(--rose-bg);
+  color: var(--rose-text);
+  border: 1px solid var(--rose-border);
 }

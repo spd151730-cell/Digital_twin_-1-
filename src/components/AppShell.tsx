@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { Sidebar } from './Sidebar';
-import { TopMissionBar } from './TopMissionBar';
+import { TopNavigation } from './TopNavigation';
+import { ManualControls } from '../views/ManualControls';
 import './AppShell.css';
 
 interface AppShellProps {
@@ -10,12 +10,18 @@ interface AppShellProps {
 }
 
 export function AppShell({ children, currentView, onViewChange }: AppShellProps) {
+  const showSidebar = currentView === 'live';
+
   return (
     <div className="app-shell">
-      <Sidebar currentView={currentView} onViewChange={onViewChange} />
-      <div className="main-content">
-        <TopMissionBar currentView={currentView} onViewChange={onViewChange} />
-        <main className="view-container">
+      <TopNavigation currentView={currentView} onViewChange={onViewChange} />
+      <div className={`app-body ${showSidebar ? 'with-sidebar' : ''}`}>
+        {showSidebar && (
+          <aside className="app-sidebar">
+            <ManualControls />
+          </aside>
+        )}
+        <main className="main-content">
           {children}
         </main>
       </div>
