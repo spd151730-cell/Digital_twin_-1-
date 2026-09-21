@@ -1,22 +1,28 @@
+/* ── Panels (shared .panel class) ── */
 .panel {
-  background-color: var(--bg-surface);
+  background-color: var(--bg-base);
   border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 16px;
+  border-radius: 6px;
+  padding: 14px 16px;
   display: flex;
   flex-direction: column;
+  /* soft elevation, NOT a glow */
+  box-shadow: var(--shadow-sm);
 }
 
+/* Alert panel variants */
 .alert-panel {
   border-left-width: 4px;
 }
 
 .alert-panel.warning {
   border-left-color: var(--status-warning);
+  background-color: #fffbeb;
 }
 
 .alert-panel.critical {
   border-left-color: var(--status-critical);
+  background-color: #fff5f5;
 }
 
 .alert-panel.empty-alert {
@@ -25,25 +31,20 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 32px 16px;
+  padding: 28px 16px;
   color: var(--text-secondary);
+  background-color: var(--bg-surface);
 }
 
-.icon-empty {
-  margin-bottom: 8px;
-  opacity: 0.5;
-}
+.icon-empty { margin-bottom: 8px; opacity: 0.4; }
+.empty-title { color: var(--text-primary); font-weight: 500; }
 
-.empty-title {
-  color: var(--text-primary);
-  font-weight: 500;
-}
-
+/* Alert header */
 .alert-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .alert-title-row {
@@ -53,81 +54,72 @@
 }
 
 .alert-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: var(--text-primary);
+  text-shadow: none;
 }
 
-.warning .alert-icon {
-  color: var(--status-warning);
-}
-
-.critical .alert-icon {
-  color: var(--status-critical);
-}
+.warning .alert-icon { color: var(--status-warning); }
+.critical .alert-icon { color: var(--status-critical); }
 
 .alert-time {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--text-secondary);
 }
 
+/* Confidence row */
 .alert-confidence {
   display: flex;
   justify-content: space-between;
-  background-color: var(--bg-base);
-  padding: 8px 12px;
+  background-color: var(--bg-surface);
+  padding: 7px 10px;
   border-radius: 4px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
+  border: 1px solid var(--border);
 }
 
-.alert-confidence .label {
-  color: var(--text-secondary);
-  font-size: 13px;
-}
+.alert-confidence .label { color: var(--text-secondary); font-size: 12px; }
+.alert-confidence .value { color: var(--text-primary); font-weight: 600; }
 
-.alert-confidence .value {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.alert-section {
-  margin-bottom: 16px;
-}
+/* Sections */
+.alert-section { margin-bottom: 14px; }
 
 .section-title {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
   color: var(--text-secondary);
   letter-spacing: 0.5px;
   font-weight: 600;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .evidence-list {
   margin: 0;
-  padding-left: 20px;
+  padding-left: 18px;
   color: var(--text-primary);
-  font-size: 13px;
+  font-size: 12px;
 }
 
-.evidence-list li {
-  margin-bottom: 4px;
-}
+.evidence-list li { margin-bottom: 3px; }
 
+/* Action section */
 .action-section {
-  background-color: rgba(56, 189, 248, 0.05);
-  border: 1px solid var(--accent-transparent);
-  padding: 12px;
+  background-color: #f0f9ff;
+  border: 1px solid #bae6fd;
+  padding: 10px 12px;
   border-radius: 4px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .action-text {
-  color: var(--accent);
+  color: #0369a1;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
+  text-shadow: none;
 }
 
+/* Buttons */
 .alert-actions {
   display: flex;
   gap: 8px;
@@ -136,13 +128,13 @@
 
 .btn {
   flex: 1;
-  padding: 8px 12px;
-  border-radius: 4px;
-  font-size: 13px;
+  padding: 7px 10px;
+  border-radius: 5px;
+  font-size: 12px;
   font-weight: 500;
   cursor: pointer;
-  border: none;
-  transition: background-color 0.2s;
+  transition: background-color 0.15s;
+  text-shadow: none;
 }
 
 .btn-secondary {
@@ -151,15 +143,12 @@
   border: 1px solid var(--border);
 }
 
-.btn-secondary:hover {
-  background-color: var(--border);
-}
+.btn-secondary:hover { background-color: var(--bg-surface-hover); }
 
 .btn-primary {
   background-color: var(--accent);
-  color: var(--bg-base);
+  color: #fff;
+  border: 1px solid var(--accent);
 }
 
-.btn-primary:hover {
-  filter: brightness(1.1);
-}
+.btn-primary:hover { background-color: #0284c7; }

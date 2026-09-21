@@ -1,37 +1,37 @@
+/* ── System status panel ── */
 .status-panel {
   flex: 1;
 }
 
 .panel-title {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--border);
+  text-shadow: none;
 }
 
 .status-list {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .status-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 13px;
+  font-size: 12px;
 }
 
-.status-label {
-  color: var(--text-secondary);
-}
+.status-label { color: var(--text-secondary); }
 
 .status-value-group {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
 }
 
 .status-value {
@@ -39,14 +39,6 @@
   text-transform: capitalize;
 }
 
-.status-icon.good {
-  color: var(--status-normal);
-}
-
-.status-icon.warn {
-  color: var(--status-warning);
-}
-
-.status-icon.bad {
-  color: var(--status-critical);
-}
+.status-icon.good  { color: var(--status-normal); }
+.status-icon.warn  { color: var(--status-warning); }
+.status-icon.bad   { color: var(--status-critical); }

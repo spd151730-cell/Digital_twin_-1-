@@ -1,3 +1,4 @@
+/* ── Twin visualization: white schematic ── */
 .twin-panel {
   flex: 1;
   display: flex;
@@ -8,19 +9,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
+/* Sync status badge – uses accent blue, no glow */
 .sync-status {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  color: var(--accent);
-  background-color: var(--accent-transparent);
-  padding: 4px 8px;
-  border-radius: 12px;
+  gap: 5px;
+  font-size: 10px;
+  color: #0369a1;
+  background-color: #e0f2fe;
+  border: 1px solid #bae6fd;
+  padding: 3px 8px;
+  border-radius: 10px;
   font-weight: 600;
+  text-shadow: none;
 }
 
 .sync-icon.active {
@@ -29,22 +33,24 @@
 
 @keyframes spin {
   from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  to   { transform: rotate(360deg); }
 }
 
+/* Schematic container */
 .schematic-container {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-base);
-  border-radius: 8px;
-  border: 1px dashed var(--border);
-  padding: 24px;
+  background-color: var(--bg-surface);
+  border-radius: 6px;
+  border: 1px dashed var(--border-light);
+  padding: 20px;
   position: relative;
   overflow: hidden;
 }
 
+/* Placeholder overlay – light, readable */
 .placeholder-overlay {
   position: absolute;
   z-index: 10;
@@ -54,38 +60,32 @@
   justify-content: center;
   text-align: center;
   padding: 16px;
-  background-color: rgba(15, 21, 31, 0.7);
-  backdrop-filter: blur(2px);
+  background-color: rgba(248, 250, 252, 0.92);
   inset: 0;
 }
 
 .placeholder-badge {
-  font-size: 11px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 700;
   letter-spacing: 0.5px;
-  padding: 4px 8px;
+  padding: 3px 8px;
   border-radius: 4px;
-  border: 1px dashed var(--text-secondary);
+  border: 1px dashed var(--border-light);
   color: var(--text-secondary);
   margin-bottom: 8px;
+  text-shadow: none;
 }
 
 .placeholder-desc {
   font-size: 12px;
   color: var(--text-secondary);
-  max-width: 200px;
+  max-width: 220px;
 }
 
-.mt-4 {
-  margin-top: 16px;
-}
+.mt-4  { margin-top: 14px; }
+.btn-sm { padding: 4px 12px; font-size: 12px; }
 
-.btn-sm {
-  padding: 4px 12px;
-  font-size: 12px;
-}
-
-/* Simplified CSS drawing of an engine */
+/* Engine CSS illustration */
 .engine-schematic {
   width: 100%;
   height: 100%;
@@ -94,56 +94,44 @@
   justify-content: center;
 }
 
-.engine-schematic.blurred {
-  opacity: 0.4;
-}
+.engine-schematic.blurred { opacity: 0.35; }
 
 .engine-core {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  width: 160px;
+  gap: 6px;
+  width: 150px;
 }
 
 .engine-zone {
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--border);
   border-radius: 4px;
-  padding: 16px;
+  padding: 14px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-secondary);
-  background-color: rgba(255, 255, 255, 0.02);
+  background-color: var(--bg-base);
   position: relative;
 }
 
-.zone-propeller {
-  border-radius: 50% 50% 4px 4px;
-  height: 40px;
-}
+.zone-propeller { border-radius: 50% 50% 4px 4px; height: 36px; }
+.zone-cylinders  { height: 110px; display: flex; align-items: center; justify-content: center; }
+.zone-crankcase  { height: 72px; }
 
-.zone-cylinders {
-  height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.zone-crankcase {
-  height: 80px;
-}
-
+/* Alert zone – warm amber, NO glow */
 .engine-zone.active-alert {
   border-color: var(--status-warning);
-  background-color: rgba(245, 158, 11, 0.05);
+  background-color: #fffbeb;
   color: var(--status-warning);
 }
 
+/* Alert ping – simple pulsing dot */
 .alert-ping {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   background-color: var(--status-warning);
   border-radius: 50%;
   transform: translate(-50%, -50%);
@@ -152,34 +140,30 @@
 .alert-ping::after {
   content: '';
   position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
+  top: -4px; left: -4px; right: -4px; bottom: -4px;
   border-radius: 50%;
   border: 2px solid var(--status-warning);
   animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  /* NO glow filter */
 }
 
 @keyframes ping {
-  75%, 100% {
-    transform: scale(2);
-    opacity: 0;
-  }
+  75%, 100% { transform: scale(2.2); opacity: 0; }
 }
 
+/* Legend */
 .twin-legend {
   display: flex;
-  gap: 16px;
-  margin-top: 16px;
+  gap: 14px;
+  margin-top: 12px;
   justify-content: center;
 }
 
 .legend-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 12px;
+  gap: 5px;
+  font-size: 11px;
   color: var(--text-secondary);
 }
 
@@ -189,10 +173,5 @@
   border-radius: 2px;
 }
 
-.legend-color.color-normal {
-  background-color: var(--border-light);
-}
-
-.legend-color.color-warning {
-  background-color: var(--status-warning);
-}
+.legend-color.color-normal  { background-color: var(--border-light); }
+.legend-color.color-warning { background-color: var(--status-warning); }

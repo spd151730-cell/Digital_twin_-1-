@@ -1,82 +1,93 @@
+/* ── Design Tokens ── */
 :root {
-  --bg-base: #0f151f; /* Deep charcoal/navy */
-  --bg-surface: #1a2231;
-  --bg-surface-hover: #232c3f;
-  --border: #2e3b52;
-  --border-light: #3a4b66;
-  
-  --text-primary: #f1f5f9; /* Off-white */
-  --text-secondary: #94a3b8; /* Muted blue-gray */
-  
-  --accent: #38bdf8;
-  --accent-transparent: rgba(56, 189, 248, 0.15);
-  
-  --status-normal: #10b981;
-  --status-warning: #f59e0b;
-  --status-critical: #ef4444;
+  /* Sidebar (colored) */
+  --sidebar-bg: #1e293b;
+  --sidebar-text: #cbd5e1;
+  --sidebar-text-active: #ffffff;
+  --sidebar-active-bg: #334155;
+  --sidebar-hover-bg: #27364a;
+  --sidebar-border: #334155;
+  --sidebar-accent: #38bdf8;
+
+  /* Main background – pure white */
+  --bg-base: #ffffff;
+  --bg-surface: #f8fafc;
+  --bg-surface-hover: #f1f5f9;
+
+  /* Borders */
+  --border: #e2e8f0;
+  --border-light: #cbd5e1;
+
+  /* Text – charcoal, no glow */
+  --text-primary: #1e293b;
+  --text-secondary: #64748b;
+
+  /* Interactive / accent (used only in main content sparingly) */
+  --accent: #0ea5e9;
+  --accent-bg: #e0f2fe;
+  --accent-transparent: rgba(14, 165, 233, 0.1);
+
+  /* Status colours */
+  --status-normal: #16a34a;
+  --status-warning: #d97706;
+  --status-critical: #dc2626;
+
+  /* Shadows – soft, no glow */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', 'Roboto Mono', ui-monospace, monospace;
 }
 
-* {
-  box-sizing: border-box;
-}
+/* ── Reset ── */
+* { box-sizing: border-box; }
 
-body {
+html, body {
   margin: 0;
-  font-family: var(--font-sans);
-  background-color: var(--bg-base);
+  padding: 0;
+  background: var(--bg-base);
   color: var(--text-primary);
+  font-family: var(--font-sans);
   font-size: 14px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* NO text-shadow, NO glow */
+  text-shadow: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  font-weight: 500;
-}
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: 600; text-shadow: none; }
+p { margin: 0; }
 
-p {
-  margin: 0;
-}
-
-a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-button {
-  font-family: inherit;
-}
+a { color: var(--accent); text-decoration: none; }
+button { font-family: inherit; text-shadow: none; }
 
 .tabular-nums {
   font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--bg-base);
-}
-::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--border-light);
-}
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
 
-/* App Layout */
+/* ── App layout ── */
 #root {
   display: flex;
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+}
+
+/* ── Focus ring – visible, no glow ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── Reduce motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
 }
